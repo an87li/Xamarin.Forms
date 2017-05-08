@@ -169,6 +169,12 @@ namespace Xamarin.Forms.Xaml
 					return value;
 				if (toType == typeof(Decimal))
 					return Decimal.Parse(str, CultureInfo.InvariantCulture);
+
+				if (toType == typeof(VisualElement))
+				{
+					Log.Warning("Type Conversion", "Setting Accessibility.LabeledBy is not currently supported in XAML.");
+					return null;
+				}
 			}
 
 			//if there's an implicit conversion, convert
